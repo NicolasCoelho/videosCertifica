@@ -1,1 +1,13 @@
-https://player.vimeo.com/video/534103714
+(function(){
+    const url = "https://player.vimeo.com/video/";
+    const list = [
+        {name:"HUB", link: "534103714"},
+    ];
+
+    let ul = "<ul style='list-style: decimal;margin: 0;padding: 0;'>"
+    list.forEach(el=>ul += `<li id='${el.link}' style="padding: 10px 0px; font-size: 16px;">${el.name}</li>`);
+    ul += '</ul>';
+    document.body.innerHTML = `<div style='display: flex;'><div style="width: 35%; padding: 20px 45px;">${ul}</div><div  style="width: 65%;padding: 20px;"><iframe src="" style="width: 100%; height: 500px; border: none;" allowfullscreen></iframe></div></div><style>li:hover{cursor:pointer;}</style>`;
+    list.forEach(el => document.getElementById(+el.link).addEventListener('click', function(){document.querySelector('iframe').setAttribute('src', url+el.link)}))
+
+})();

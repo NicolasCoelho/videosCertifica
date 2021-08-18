@@ -1,0 +1,1 @@
+document.querySelectorAll("body > div.wrapper > div.templateSection.templateFooter > div > div > div:nth-child(2) > div > div > div > ol > li > div > div > div > div > ol > li").forEach(el=>console.log(el.innerHTML = "<input type='checkbox'>" + el.innerHTML))
